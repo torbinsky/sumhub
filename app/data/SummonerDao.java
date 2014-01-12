@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.jongo.Jongo;
 import org.jongo.MongoCollection;
 
+import data.summoner.SummonerDto;
 import play.cache.Cache;
 import services.riot.RiotApi;
 
@@ -50,4 +51,6 @@ public class SummonerDao {
 			}
 		}, 60);
 	}
+	
+	
 }

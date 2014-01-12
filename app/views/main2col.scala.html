@@ -1,0 +1,16 @@
+@(title: String)(contentLeft: Html)(contentRight: Html)
+
+@components.header(title)
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-8">
+			@contentLeft
+		</div>
+		<div class="col-xs-4">
+			@contentRight
+		</div>
+	</div>
+</div>
+
+@components.footer()

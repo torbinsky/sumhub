@@ -1,66 +1,78 @@
-package data;
+package data.summoner;
 
 import java.io.Serializable;
 import java.util.Date;
 
 import org.jongo.marshall.jackson.oid.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SummonerDto implements Serializable {
 	@Id
 	private long id;
 	private String name;
 	private int profileIconId;
-	private Date revisionDate;
+	private long revisionDate;
 	private long summonerLevel;
 	private String region;
-	
+	private Date revisionDateStr;
+
 	public SummonerDto() {
 		super();
 	}
 
-	public SummonerDto(String region, long id, String name, int profileIconId, Date revisionDate, long summonerLevel) {
-		super();
-		this.region = region;
-		this.id = id;
-		this.name = name;
-		this.profileIconId = profileIconId;		
-		this.revisionDate = revisionDate;
-		this.summonerLevel = summonerLevel;
-	}
-	
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	@JsonProperty("id")
-	public void setId0(long id){
+	public void setId0(long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getProfileIconId() {
 		return profileIconId;
 	}
+
 	public void setProfileIconId(int profileIconId) {
 		this.profileIconId = profileIconId;
 	}
-	public Date getRevisionDate() {
+
+	public Date getRevisionDateStr() {
+		return revisionDateStr == null ? new Date(revisionDate) : revisionDateStr;
+	}
+
+	public void setRevisionDate(long revisionDate) {
+		this.revisionDate = revisionDate;
+		this.revisionDateStr = new Date(revisionDate);
+	}
+
+	public long getRevisionDate() {
 		return revisionDate;
 	}
-	public void setRevisionDate(Date revisionDate) {
-		this.revisionDate = revisionDate;
+
+	public void setRevisionDateStr(Date revisionDateStr) {
+		this.revisionDateStr = revisionDateStr;
 	}
+
 	public long getSummonerLevel() {
 		return summonerLevel;
 	}
+
 	public void setSummonerLevel(long summonerLevel) {
 		this.summonerLevel = summonerLevel;
 	}
@@ -72,5 +84,5 @@ public class SummonerDto implements Serializable {
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	
+
 }
