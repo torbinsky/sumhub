@@ -1,3 +1,5 @@
+package sumhub;
+
 import sumhub.services.db._DbModule;
 import sumhub.services.riot._RiotModule;
 

@@ -1,3 +1,5 @@
+package sumhub;
+
 import play.GlobalSettings;
 
 import com.google.inject.Guice;
