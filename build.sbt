@@ -9,4 +9,6 @@ libraryDependencies ++= Seq(
   "com.google.inject" % "guice" % "3.0"
 )     
 
+javacOptions ++= Seq("-source", "1.7")
+
 play.Project.playJavaSettings
