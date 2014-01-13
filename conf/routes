@@ -3,10 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
-GET		/:region/:name/profile		@controllers.Application.summonerProfile(region, name)
-GET		/:region/:name/stats		@controllers.Application.summonerStats(region, name)
-GET		/:region/:name/update_stats	@controllers.Application.updateStatsSummary(region, name)
+GET     /                           sumhub.controllers.Application.index()
+GET		/:region/:name/profile		@sumhub.controllers.Application.summonerProfile(region, name)
+GET		/:region/:name/stats		@sumhub.controllers.Application.summonerStats(region, name)
+GET		/:region/:name/update_stats	@sumhub.controllers.Application.updateStatsSummary(region, name)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

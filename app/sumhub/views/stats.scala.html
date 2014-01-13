@@ -1,0 +1,20 @@
+@(summoner: sumhub.data.summoner.SummonerDto, stats: List[sumhub.data.stats.PlayerStatsSummaryDto])
+
+@main2col("My Profile - Statistics") {
+    <h1>Breakdown (@summoner.getName())</h1>
+    @if(stats.size() > 0){
+    	
+    	@for(stat <- stats){
+    		<h2>@stat.getPlayerStatSummaryType()</h2>
+    		Wins: @stat.getWins()
+	    	<br />
+	    	Losses: @stat.getLosses()
+	    	<br />
+    	}
+	}else{
+		No stats yet :(
+	}
+}{
+	<h1>MultiKills</h1>
+	
+}
